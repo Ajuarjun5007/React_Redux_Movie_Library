@@ -1,7 +1,7 @@
 
 .movie-link {
-  text-decoration: none; /* Remove underline */
-  color: inherit;        /* Ensure text color is inherited */
+  text-decoration: none; 
+  color: inherit;        
 }
 .movie-list {
     display: flex;
@@ -10,11 +10,12 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
-  /* background-color: antiquewhite; */
+ 
     padding: 10px;
+    margin-top: 20px;
     width:100%;
-    /* max-height:100vh; */
+    
     box-sizing: border-box;
-    /* position: relative; */
+   
   }
   

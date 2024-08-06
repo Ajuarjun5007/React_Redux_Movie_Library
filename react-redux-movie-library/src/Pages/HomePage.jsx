@@ -9,12 +9,16 @@ const HomePage = () => {
     <div className='HomePageContainer'>
       <div className='HeaderContainer'>
         <p className='HeaderContentName'>Movie Library</p>
-          {/* <p> */}
-        <a className='HeaderContent'>Home</a>
-          {/* </p> */}
-       {/* <p> */}
-        <a className='HeaderContent'>Login</a>
-          {/* </p> */}
+     
+          <Link to={'/'}>
+        <p className='HeaderContent'>Home</p>
+          </Link>
+       
+       
+        <Link to={'/Login'}>
+        <p className='HeaderContent'>Login</p>
+        </Link>
+      
        
       </div>
       <div className='MainContainer'>

@@ -34,7 +34,7 @@ const MovieList = () => {
     <div data-testid="movie-list" className="movie-list">
       {movies.length > 0 ? (
         movies.map(movie => (
-          <Link key={movie.id} to={`/movie/${movie.id}`}>
+          <Link  key={movie.id} to={`/movie/${movie.id}`} className="movie-link">
             <MovieCard movie={movie} />
           </Link>
         ))

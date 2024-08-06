@@ -1,31 +1,29 @@
 .movie-card {
     border: 1px solid black;
     height: 420px; 
-    width: 200px; /* Set a fixed width for the card */
-    padding: 12px;
+    width: 200px; 
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
     align-items: center;
     overflow: hidden; 
+    padding: 10px;
   }
   
   .movie-image {
     height: 300px;
     width: 100%;
-    object-fit: cover; /* Maintain aspect ratio */
+    object-fit: cover; 
   }
   
   .movie-details {
     display: flex;
-    flex-direction: column; /* Stack details vertically */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%; /* Ensure details section fits within card width */
-    text-align: center; /* Center align text */
-    overflow-wrap: break-word; /* Break long words and URLs */
-    /* padding-bottom: 10px; */
-
+    width: 100%;
+    text-align: center; 
+    overflow-wrap: break-word; 
   }
   
   .movie-name, .movie-year, .movie-type, .movie-rating {

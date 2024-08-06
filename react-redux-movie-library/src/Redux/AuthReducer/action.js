@@ -1,16 +1,20 @@
-// src/Redux/AuthReducer/action.js
-import { LOGIN_SUCCESS, LOGOUT, AUTH_ERROR } from './actionTypes';
-import axios from 'axios';
 
-export const login = (credentials, redirectTo) => async (dispatch) => {
+import axios from 'axios';
+import { LOGIN_SUCCESS, LOGIN_FAILURE } from './actionTypes';
+
+export const login = (credentials, onSuccess) => async (dispatch) => {
   try {
-    const response = await axios.post('https://reqres.in/api/login', credentials);
-    const { token } = response.data;
-    dispatch({ type: LOGIN_SUCCESS, payload: token });
-    redirectTo();
+    const response = await axios.post('http://localhost:8080/login', credentials);
+    dispatch({
+      type: LOGIN_SUCCESS,
+      payload: response.data, 
+    });
+    onSuccess(); 
   } catch (error) {
-    dispatch({ type: AUTH_ERROR });
+    dispatch({
+      type: LOGIN_FAILURE,
+      payload: error.message,
+    });
+  
   }
 };
-
-export const logout = () => ({ type: LOGOUT });

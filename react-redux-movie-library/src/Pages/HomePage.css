@@ -10,7 +10,7 @@
   justify-content: flex-start;
   padding: 5px 10px;
   background-color: white;
-  border-bottom: 1px solid #a42424;
+  border-bottom: 1px solid black;
   z-index: 1;
   position: fixed;
   top: 0;
@@ -23,11 +23,11 @@
 .HeaderContentName {
   font-size: 24px;
   margin: 0;
+  font-weight: 700;
 }
 
 .HeaderContent {
   margin-left: 20px;
-  color: #007bff;
   text-decoration: none;
 }
 
@@ -40,14 +40,6 @@
   margin-top: 42px; 
 }
 
-/* .SideBar {
-  width: 15%;
-  border-right: 1px solid grey;
-  position: fixed;
-  top: 50px; 
-  bottom: 0;
-  
-} */
 
 .ContentContainer {
   margin-left: 15%;
@@ -56,5 +48,4 @@
   overflow-y: auto; 
   height: 100%; 
   /* width: 70%; */
-  margin: 2px solid green;
 }

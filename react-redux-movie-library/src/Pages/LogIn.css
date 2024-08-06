@@ -1,0 +1,45 @@
+/* LogIn.css */
+
+.LoginContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px; /* Limit the form width */
+    padding: 40px;
+        border: 2px solid black;
+  }
+  
+  .inputContainer{
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px solid red;
+    width: 200px!important;
+  }
+  .button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .button-Item{
+    position: relative;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    width: 200px!important;
+  }
+  
+ 

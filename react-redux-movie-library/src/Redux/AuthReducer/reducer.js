@@ -1,9 +1,10 @@
-// src/Redux/AuthReducer/reducer.js
-import { LOGIN_SUCCESS, LOGOUT, AUTH_ERROR } from './actionTypes';
+
+import { LOGIN_SUCCESS, AUTH_ERROR, LOGOUT, LOGIN_FAILURE } from './actionTypes';
 
 const initialState = {
   isAuth: false,
   token: null,
+  error: null,
 };
 
 const authReducer = (state = initialState, action) => {
@@ -12,20 +13,25 @@ const authReducer = (state = initialState, action) => {
       return {
         ...state,
         isAuth: true,
-        token: action.payload,
+        token: action.payload.token,
+        error: null,
       };
-    case LOGOUT:
+    case LOGIN_FAILURE:
       return {
         ...state,
         isAuth: false,
         token: null,
+        error: action.payload.error, 
       };
     case AUTH_ERROR:
       return {
         ...state,
         isAuth: false,
         token: null,
+        error: action.payload.error, 
       };
+    case LOGOUT:
+      return initialState;
     default:
       return state;
   }

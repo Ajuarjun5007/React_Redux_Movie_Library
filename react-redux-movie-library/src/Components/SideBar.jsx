@@ -7,7 +7,7 @@ const SideBar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Handle filtering changes
+
   const handleFilterChange = (rating) => {
     const searchParams = new URLSearchParams(location.search);
     const currentRatings = searchParams.getAll('rating');
@@ -21,22 +21,22 @@ const SideBar = () => {
     navigate({ search: searchParams.toString() });
   };
 
-  // Handle sorting changes
+ 
   const handleSortChange = (order) => {
     const searchParams = new URLSearchParams(location.search);
     searchParams.set('order', order);
     navigate({ search: searchParams.toString() });
   };
 
-  // Determine if a rating checkbox should be checked
+  
   const isChecked = (rating) => {
     return location.search.includes(`rating=${rating}`);
   };
 
-  // Determine the current sort order
+
   const currentOrder = new URLSearchParams(location.search).get('order') || '';
 
-  // Render stars for the rating filter
+
   const renderStars = (count) => {
     return (
       <span className='stars'>
@@ -56,6 +56,7 @@ const SideBar = () => {
         {[1, 2, 3, 4, 5].map(rating => (
           <div key={rating} className='ratingRow'>
             <input
+            className='checkbox_input'
               type="checkbox"
               checked={isChecked(rating)}
               onChange={() => handleFilterChange(rating)}

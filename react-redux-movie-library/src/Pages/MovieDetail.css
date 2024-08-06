@@ -1,0 +1,30 @@
+.movie-image {
+    height: 300px;
+    width: 200px;
+  }
+  
+  .Movie-detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .Movie-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .star {
+    color: black;
+    margin: 0 2px;
+  }
+  

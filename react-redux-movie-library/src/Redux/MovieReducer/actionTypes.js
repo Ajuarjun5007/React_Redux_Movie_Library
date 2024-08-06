@@ -1,9 +1,3 @@
-// actionTypes.js
-
-export const FETCH_MOVIES_REQUEST = 'FETCH_MOVIES_REQUEST';
+export const SET_LOADING = 'SET_LOADING';
 export const FETCH_MOVIES_SUCCESS = 'FETCH_MOVIES_SUCCESS';
 export const FETCH_MOVIES_FAILURE = 'FETCH_MOVIES_FAILURE';
-export const SET_LOADING = 'SET_LOADING';
-export const SET_ERROR = 'SET_ERROR';
-export const UPDATE_FILTER = 'UPDATE_FILTER';
-export const UPDATE_SORT = 'UPDATE_SORT';

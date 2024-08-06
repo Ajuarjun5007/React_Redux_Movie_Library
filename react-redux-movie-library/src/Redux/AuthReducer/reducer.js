@@ -1,36 +1,30 @@
 // src/Redux/AuthReducer/reducer.js
+import { LOGIN_SUCCESS, LOGOUT, AUTH_ERROR } from './actionTypes';
 
 const initialState = {
-  isLoading: false,
-  isError: false,
   isAuth: false,
-  token: "",
+  token: null,
 };
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'AUTH_REQUEST':
+    case LOGIN_SUCCESS:
       return {
         ...state,
-        isLoading: true,
-        isError: false,
-      };
-    case 'AUTH_SUCCESS':
-      return {
-        ...state,
-        isLoading: false,
         isAuth: true,
         token: action.payload,
       };
-    case 'AUTH_FAILURE':
+    case LOGOUT:
       return {
         ...state,
-        isLoading: false,
-        isError: true,
+        isAuth: false,
+        token: null,
       };
-    case 'LOGOUT':
+    case AUTH_ERROR:
       return {
-        ...initialState,
+        ...state,
+        isAuth: false,
+        token: null,
       };
     default:
       return state;

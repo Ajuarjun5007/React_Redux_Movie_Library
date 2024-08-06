@@ -1,26 +1,31 @@
-// src/Redux/MovieReducer/reducer.js
-
 const initialState = {
   isLoading: false,
   isError: false,
   movies: [],
 };
 
+console.log("moivedadd",initialState.movies);
 const movieReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'MOVIE_REQUEST':
+    case 'SET_LOADING':
       return {
         ...state,
         isLoading: true,
         isError: false,
       };
-    case 'MOVIE_SUCCESS':
+    case 'FETCH_MOVIES_SUCCESS':
       return {
         ...state,
         isLoading: false,
         movies: action.payload,
       };
-    case 'MOVIE_FAILURE':
+    case 'FILTER_MOVIES':
+      const { ratingFilters } = action.payload;
+      return {
+        ...state,
+        movies: state.movies.filter(movie => ratingFilters.includes(movie.rating)),
+      };
+    case 'FETCH_MOVIES_FAILURE':
       return {
         ...state,
         isLoading: false,

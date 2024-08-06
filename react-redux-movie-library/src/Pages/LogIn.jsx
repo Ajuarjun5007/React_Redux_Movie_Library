@@ -1,36 +1,46 @@
+// src/Pages/LogIn.jsx
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { login } from '../Redux/AuthReducer/action';
 
-const LogIn = ({ location, history }) => {
+const LogIn = () => {
+  const [credentials, setCredentials] = useState({ email: '', password: '' });
   const dispatch = useDispatch();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleChange = (e) => {
+    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    const token = 'dummy_token';
-    dispatch(login(token));
-    history.push(location.state?.from || '/');
+    dispatch(login(credentials, () => navigate('/')));
   };
 
   return (
-    <form onSubmit={handleLogin}>
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
-      <button type="submit">Log In</button>
-    </form>
+    <div>
+      <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={credentials.email}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={credentials.password}
+          onChange={handleChange}
+          required
+        />
+        <button type="submit">Log In</button>
+      </form>
+    </div>
   );
 };
 

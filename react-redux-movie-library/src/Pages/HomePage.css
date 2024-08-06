@@ -1,0 +1,60 @@
+.HomePageContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; 
+
+}
+
+.HeaderContainer {
+  display: flex;
+  justify-content: flex-start;
+  padding: 5px 10px;
+  background-color: white;
+  border-bottom: 1px solid #a42424;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  align-items: center;
+
+}
+
+.HeaderContentName {
+  font-size: 24px;
+  margin: 0;
+}
+
+.HeaderContent {
+  margin-left: 20px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.HeaderContent:hover {
+  text-decoration: underline;
+}
+
+.MainContainer {
+  display: flex;
+  margin-top: 42px; 
+}
+
+/* .SideBar {
+  width: 15%;
+  border-right: 1px solid grey;
+  position: fixed;
+  top: 50px; 
+  bottom: 0;
+  
+} */
+
+.ContentContainer {
+  margin-left: 15%;
+  display:flex ;
+  /* padding: 20px; */
+  overflow-y: auto; 
+  height: 100%; 
+  /* width: 70%; */
+  margin: 2px solid green;
+}
